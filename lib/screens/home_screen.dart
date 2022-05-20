@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import 'package:peliculas/providers/movies_providers.dart';
 import 'package:peliculas/widgets/widgets.dart';
+import 'package:peliculas/search/search_delegate.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -18,7 +19,10 @@ class HomeScreen extends StatelessWidget {
         actions: [
           IconButton(
             icon: const Icon(Icons.search_outlined),
-            onPressed: () {}
+            onPressed: () => showSearch(
+              context: context,
+              delegate: MovieSearchDelegate(),
+            ),
           ),
         ],
       ),
